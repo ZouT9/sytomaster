@@ -1,0 +1,282 @@
+{
+  "source": "Авторский учебный каталог СытоМастера",
+  "costBasis": "Оценка стоимости использованной части продуктов по учебному справочнику, за одну порцию.",
+  "servings": 2,
+  "count": 520,
+  "coreCount": 8,
+  "variantCount": 512,
+  "editorialBasis": "Восемь основных блюд. Для каждого семейства подобраны восемь подходящих добавок и восемь овощных компонентов; рецептура, метод обработки, количество, цена и расчёт времени зависят от выбранных ингредиентов.",
+  "photoBasis": "Восемь иллюстраций подачи. Четыре исходных изображения проекта и четыре новых иллюстрации блюд. На карточках вариантов используется изображение соответствующего семейства.",
+  "poultryTemperatureSource": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+  "dietBasis": "По составу перечисленных ингредиентов. Упакованные продукты нужно сверять с маркировкой производителя. Для вегетарианских вариантов с сыром нужен сыр с ферментом неживотного происхождения. Перекрёстный контакт, сертификация халяль и медицинская безопасность не устанавливаются.",
+  "heartyBasis": "Редакционная шкала 1–3: облегчённые овощные омлеты, стандартное блюдо либо блюдо с птицей/бобовыми в сочетании с плотной основой. Оценка не выражает калорийность.",
+  "costMethod": "Цена порции = округлённая сумма оценочной стоимости ингредиентов для всей партии, делённая на число порций. Рубли стандартной учебной калькуляции. За цену покупки упаковки это значение не принимается.",
+  "items": [
+    {
+      "id": "salt",
+      "name": "Соль",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 3
+    },
+    {
+      "id": "oil",
+      "name": "Растительное масло",
+      "unit": "мл",
+      "referenceQuantity": 100,
+      "rubles": 22
+    },
+    {
+      "id": "water",
+      "name": "Вода",
+      "unit": "мл",
+      "referenceQuantity": 100,
+      "rubles": 0
+    },
+    {
+      "id": "rice",
+      "name": "Рис басмати",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 24
+    },
+    {
+      "id": "pasta",
+      "name": "Макароны без яиц",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 22
+    },
+    {
+      "id": "buckwheat",
+      "name": "Гречневая крупа",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 15
+    },
+    {
+      "id": "eggs",
+      "name": "Яйца",
+      "unit": "шт.",
+      "referenceQuantity": 1,
+      "rubles": 16
+    },
+    {
+      "id": "red-lentils",
+      "name": "Красная чечевица",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 31
+    },
+    {
+      "id": "potatoes",
+      "name": "Картофель",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 8
+    },
+    {
+      "id": "couscous",
+      "name": "Кускус",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 36
+    },
+    {
+      "id": "chicken",
+      "name": "Куриное филе",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 58
+    },
+    {
+      "id": "turkey",
+      "name": "Филе индейки",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 72
+    },
+    {
+      "id": "mushroom",
+      "name": "Шампиньоны",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 40
+    },
+    {
+      "id": "tofu",
+      "name": "Тофу",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 68
+    },
+    {
+      "id": "chickpeas",
+      "name": "Консервированный нут",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 40
+    },
+    {
+      "id": "kidney",
+      "name": "Красная фасоль",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 37
+    },
+    {
+      "id": "white-beans",
+      "name": "Белая фасоль",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 40
+    },
+    {
+      "id": "peas",
+      "name": "Зелёный горошек",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 33
+    },
+    {
+      "id": "corn",
+      "name": "Кукуруза",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 38
+    },
+    {
+      "id": "cheese",
+      "name": "Полутвёрдый сыр",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 102
+    },
+    {
+      "id": "feta",
+      "name": "Фета",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 100
+    },
+    {
+      "id": "tomato",
+      "name": "Томаты",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 31
+    },
+    {
+      "id": "pepper",
+      "name": "Сладкий перец",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 41
+    },
+    {
+      "id": "carrot",
+      "name": "Морковь",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 8
+    },
+    {
+      "id": "zucchini",
+      "name": "Кабачок",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 24
+    },
+    {
+      "id": "pumpkin",
+      "name": "Тыква",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 17
+    },
+    {
+      "id": "broccoli",
+      "name": "Брокколи",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 35
+    },
+    {
+      "id": "eggplant",
+      "name": "Баклажан",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 34
+    },
+    {
+      "id": "spinach",
+      "name": "Шпинат",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 83
+    },
+    {
+      "id": "onion",
+      "name": "Репчатый лук",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 8
+    },
+    {
+      "id": "leek",
+      "name": "Лук-порей",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 42
+    },
+    {
+      "id": "parsley",
+      "name": "Петрушка",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 125
+    },
+    {
+      "id": "dill",
+      "name": "Укроп",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 112
+    },
+    {
+      "id": "basil",
+      "name": "Базилик",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 155
+    },
+    {
+      "id": "lemon",
+      "name": "Лимон",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 26
+    },
+    {
+      "id": "cumin",
+      "name": "Зира",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 175
+    },
+    {
+      "id": "paprika",
+      "name": "Паприка",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 145
+    },
+    {
+      "id": "oregano",
+      "name": "Орегано",
+      "unit": "г",
+      "referenceQuantity": 100,
+      "rubles": 190
+    }
+  ]
+}

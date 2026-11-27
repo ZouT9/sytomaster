@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff7f5"><title>Состояния подбора — СытоМастер</title>
+<meta name="description" content="Подберите блюдо по продуктам, времени и бюджету. Рецепты с пошаговой готовкой, таймером и списком покупок.">
+<link rel="icon" href="static/icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="static/css/tokens.css">
+<link rel="stylesheet" href="static/css/components.css">
+<link rel="stylesheet" href="static/css/home.css">
+<link rel="stylesheet" href="static/css/picker.css">
+<link rel="stylesheet" href="static/css/cooking.css">
+<link rel="stylesheet" href="static/css/select-menu.css">
+</head><body id="top"><svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" width="0" height="0">
+  <symbol id="i-arrow-down" viewBox="0 0 24 24">
+    <path d="M12 5v14" />
+  <path d="m19 12-7 7-7-7" />
+  </symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24">
+    <path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" />
+  </symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24">
+    <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+  </symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24">
+    <path d="m5 12 7-7 7 7" />
+  <path d="M12 19V5" />
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="M20 6 9 17l-5-5" />
+  </symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24">
+    <path d="m6 9 6 6 6-6" />
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" />
+  <path d="M12 6v6l4 2" />
+  </symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24">
+    <path d="M5 12h14" />
+  <path d="M12 5v14" />
+  </symbol>
+  <symbol id="i-rotate-ccw" viewBox="0 0 24 24">
+    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" />
+  </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24">
+    <path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" />
+  </symbol>
+  <symbol id="i-shopping-basket" viewBox="0 0 24 24">
+    <path d="m15 11-1 9" />
+  <path d="m19 11-4-7" />
+  <path d="M2 11h20" />
+  <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4" />
+  <path d="M4.5 15.5h15" />
+  <path d="m5 11 4-7" />
+  <path d="m9 11 1 9" />
+  </symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24">
+    <line x1="10" x2="14" y1="2" y2="2" />
+  <line x1="12" x2="15" y1="14" y2="11" />
+  <circle cx="12" cy="14" r="8" />
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24">
+    <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+  </symbol>
+</svg>
+<a class="skip-link" href="#main-content">К содержанию</a>
+<header class="site-header shell">
+  <a class="brand" href="index.html" aria-label="СытоМастер, главная"><img src="static/icons/logo-full.svg" width="165" height="49" alt="СытоМастер"></a>
+  <nav class="site-nav" aria-label="Основная навигация">
+    <a href="index.html#catalog">Рецепты</a>
+    <a href="cart.html" ><svg class="icon" aria-hidden="true"><use href="#i-shopping-basket"></use></svg>Корзина <span data-cart-count hidden></span></a>
+  </nav>
+</header>
+<main id="main-content" class="showcase-page shell"><h1>Состояния подбора</h1><div id="state-gallery"></div><a class="text-link" href="index.html">Вернуться к подбору</a></main>
+<footer class="site-footer shell"><a class="brand" href="index.html" aria-label="СытоМастер, на главную"><img src="static/icons/logo-full.svg" width="108" height="32" alt="СытоМастер"></a><a class="text-link" href="#top">Наверх <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a></footer>
+<noscript><p class="shell">Включите JavaScript, чтобы пользоваться подбором, пошаговой готовкой и корзиной.</p></noscript>
+<template id="dish-card"><a class="dish-card" data-dish-link><div class="dish-photo"><img data-dish-image width="480" height="376" alt=""></div><div class="dish-copy"><h3 class="dish-name" data-dish-name></h3><div class="dish-meta"><span><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-dish-minutes></span></span><span data-dish-price></span></div></div></a></template>
+<template id="state-loading"><section class="search-state search-state--loading" aria-label="Результаты подбора">
+  <h2 data-state-title tabindex="-1">Подбираем блюда</h2>
+  <p data-state-notice>Проверяем продукты и ограничения.</p>
+  <progress class="finder-progress" aria-label="Идёт подбор"></progress>
+  <div data-state-groups></div>
+  <div data-state-actions></div>
+</section></template>
+<template id="state-result"><section class="search-state search-state--result" aria-label="Результаты подбора">
+  <h2 data-state-title tabindex="-1">Из ваших продуктов</h2>
+  <p data-state-notice hidden></p>
+  <div data-state-groups></div>
+  <div data-state-actions></div>
+</section></template>
+<template id="state-partial"><section class="search-state search-state--partial" aria-label="Результаты подбора">
+  <h2 data-state-title tabindex="-1">Можно приготовить с докупкой</h2>
+  <p data-state-notice>Проверьте недостающие продукты.</p>
+  <div data-state-groups></div>
+  <div data-state-actions></div>
+</section></template>
+<template id="state-empty"><section class="search-state search-state--empty" aria-label="Результаты подбора">
+  <h2 data-state-title tabindex="-1">Подходящих блюд пока нет</h2>
+  <p data-state-notice>Измените продукты, время или бюджет.</p>
+  <div data-state-groups></div>
+  <div data-state-actions></div>
+</section></template>
+<template id="state-error"><section class="search-state search-state--error" aria-label="Результаты подбора">
+  <h2 data-state-title tabindex="-1">Не удалось открыть каталог</h2>
+  <p data-state-notice>Выбранные условия сохранены.</p>
+  <div data-state-groups></div>
+  <div data-state-actions></div>
+</section></template>
+<script defer src="static/js/runtime.js"></script>
+<script defer src="static/js/icons.js"></script>
+<script defer src="static/data/catalog.js"></script>
+<script defer src="static/js/search-engine.js"></script>
+<script defer src="static/js/site.js"></script>
+<script defer src="static/js/cooking.js"></script>
+</body></html>

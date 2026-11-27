@@ -1,0 +1,30 @@
+<main id="main-content">
+  <section class="home-picker shell" aria-labelledby="home-title">
+    <h1 id="home-title"><span>Что</span> приготовим?</h1>
+    <div class="choice-layout">
+      {{picker}}
+      <div class="menu-area" id="menu-area">
+        <section class="menu-stage" id="discover" aria-labelledby="menu-title">
+          <div class="menu-head">
+            <h2 id="menu-title"><span>Ужин до 30 минут</span></h2>
+            <div class="menu-controls" hidden>
+              <button type="button" class="round-button" data-pair-prev aria-label="Предыдущая подборка" aria-controls="menu-pair"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg></button>
+              <button type="button" class="round-button" data-pair-next aria-label="Следующая подборка" aria-controls="menu-pair"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+            </div>
+          </div>
+          <div class="menu-pair" id="menu-pair">{{first-pair}}</div>
+          <p class="sr-only" id="pair-status" role="status"></p>
+        </section>
+        <div id="search-output" hidden></div><p class="sr-only" role="status" aria-live="polite" id="search-announcement"></p>
+      </div>
+    </div>
+  </section>
+  <section class="catalog shell" id="catalog" aria-labelledby="catalog-title">
+    <div class="catalog-head"><h2 id="catalog-title">Все рецепты</h2>
+      <label class="catalog-search"><span class="sr-only">Искать рецепты по названию</span><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><input id="catalog-query" type="search" placeholder="Найти по названию" autocomplete="off"></label>
+    </div>
+    <div class="recipe-grid" id="catalog-list">{{first-catalog}}</div>
+    <p class="catalog-message" id="catalog-message" hidden>Таких рецептов в каталоге пока нет. Попробуйте другое название.</p>
+    <div class="catalog-end"><button type="button" id="show-more" class="plain-button">Показать ещё</button><output id="catalog-count" aria-live="polite"></output></div>
+  </section>
+</main>

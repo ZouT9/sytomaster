@@ -1,0 +1,12 @@
+<div class="finder-field" data-ingredient-field="{kind}">
+  <label class="finder-label" for="{query_id}">{label}</label>
+  <div class="ingredient-entry">
+    <input id="{query_id}" type="text" placeholder="Введите название продукта" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="{list_id}" autocomplete="off" maxlength="90" spellcheck="false">
+    <ul class="chosen-products" aria-label="{chosen_label}"></ul>
+    <div class="ingredient-popover" hidden>
+      <p class="ingredient-menu-label" id="{list_id}-label">{menu_title}</p>
+      <ul id="{list_id}" class="ingredient-suggestions" role="listbox" aria-labelledby="{list_id}-label"></ul>
+    </div>
+  </div>
+  <p class="finder-feedback" aria-live="polite"></p>
+</div>

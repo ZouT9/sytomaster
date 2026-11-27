@@ -1,0 +1,49 @@
+<form id="recipe-finder" class="finder-form">
+  {{products-field}}
+
+  <div class="finder-limits">
+    <div class="finder-field">
+      <label class="finder-label" id="finder-time-label" for="finder-time">Время</label>
+      <div class="select-menu">
+        <select id="finder-time" name="time">
+          <option value="15">До 15 минут</option><option value="20">До 20 минут</option><option value="25">До 25 минут</option><option value="30" selected>До 30 минут</option><option value="45">До 45 минут</option><option value="60">До часа</option><option value="0">Любое время</option>
+        </select>
+      </div>
+    </div>
+    <div class="finder-field">
+      <label class="finder-label" id="finder-budget-label" for="finder-budget">Бюджет на порцию</label>
+      <div class="select-menu">
+        <select id="finder-budget" name="budget">
+          <option value="50">До 50 ₽</option><option value="100">До 100 ₽</option><option value="150">До 150 ₽</option><option value="200">До 200 ₽</option><option value="300" selected>До 300 ₽</option><option value="500">До 500 ₽</option><option value="0">Любой бюджет</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <fieldset class="finder-mode">
+    <legend class="finder-sr">Что важнее при подборе</legend>
+    <label><input type="radio" name="mode" value="fast" checked><span>Быстро</span></label>
+    <label><input type="radio" name="mode" value="cheap"><span>Дёшево</span></label>
+    <label><input type="radio" name="mode" value="hearty"><span>Сытно</span></label>
+  </fieldset>
+
+  <details class="finder-more">
+    <summary>Ограничения питания<span class="finder-constraint-count"></span><svg class="icon details-arrow" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+    <fieldset class="finder-diets">
+      <legend class="finder-sr">Обязательные условия по составу</legend>
+      <label><input type="checkbox" name="diet" value="vegan">Веганское</label>
+      <label><input type="checkbox" name="diet" value="vegetarian">Вегетарианское</label>
+      <label><input type="checkbox" name="diet" value="dairy-free">Без молочного</label>
+      <label><input type="checkbox" name="diet" value="egg-free">Без яиц</label>
+      <label><input type="checkbox" name="diet" value="gluten-free">Без глютена по составу</label>
+      <label><input type="checkbox" name="diet" value="halal">Халяль с подтверждением</label>
+    </fieldset>
+    {{excluded-field}}
+    <p class="finder-note">Вода, соль и растительное масло считаются домашним запасом. При аллергии проверьте состав на упаковке.</p>
+  </details>
+
+  <div class="finder-actions">
+    {{picker-submit}}
+    <button type="reset" class="finder-reset" hidden>Сбросить условия</button>
+  </div>
+</form>

@@ -1,0 +1,45 @@
+/* Базовая палитра и смысловые роли СытоМастера. */
+:root {
+  --milk: #fff7f5;
+  --white: #ffffff;
+  --cocoa: #6b433b;
+  --coffee: #492e28;
+  --clay: #785b51;
+  --apricot: #f5e6dd;
+  --sand: #dbc9bd;
+  --orange: #ef6d3a;
+  --brick: #983d32;
+  --disabled-ink: #735b51;
+  --bg: var(--milk);
+  --surface: var(--white);
+  --cream: var(--apricot);
+  --ink: var(--cocoa);
+  --strong: var(--coffee);
+  --muted: var(--clay);
+  --line: var(--sand);
+  --action: var(--orange);
+  --on-action: var(--white);
+  --action-label: max(19px, 1.25rem);
+  --focus: var(--coffee);
+  --danger: var(--brick);
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+  --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 80px;
+  --r-sm: 12px; --r-md: 20px; --r-lg: 32px; --r-circle: 50%;
+  --body: "Gotham Pro", Arial, sans-serif;
+  --display: "Donpoligrafbum", "Gotham Pro", sans-serif;
+  --small: .875rem; --text: 1rem; --lead: clamp(1.125rem, 1.5vw, 1.375rem);
+  --heading: clamp(1.75rem, 3.5vw, 3.875rem);
+  --hero: clamp(2.25rem, 4.72vw, 5.25rem);
+  --touch: 44px; --field-height: 52px;
+  --gutter: var(--s8);
+  --layout-gap: var(--s8);
+  --wide: 1680px;
+  --motion-fast: 180ms;
+  --motion-base: 300ms;
+  --ease-out: cubic-bezier(.2,.75,.2,1);
+  --time: var(--motion-fast);
+}
+@media(min-width:1700px){:root{--gutter:var(--s9);--layout-gap:var(--s9)}}
+@media(max-width:1399px){:root{--gutter:clamp(var(--s6),4.1vw,var(--s7));--layout-gap:var(--s6)}}
+@media(max-width:640px){:root{--gutter:var(--s5)}}
+@media(max-width:360px){:root{--gutter:var(--s4)}}

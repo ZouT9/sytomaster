@@ -1,0 +1,25 @@
+<main id="main-content" class="shell cook-page cart-page" data-cooking-page="cart">
+  <nav class="cook-back" aria-label="Навигация по рецептам"><a href="index.html#catalog"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg> К рецептам</a></nav>
+  <h1 class="dish-heading">Корзина</h1>
+  <section id="cart-empty" hidden>
+    <h2>Список покупок пока пуст</h2>
+    <p>Откройте рецепт и добавьте ингредиенты, которых не хватает дома.</p>
+    <a class="cook-action" href="index.html#catalog">Выбрать рецепт <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+  </section>
+  <div id="cart-filled" class="cart-grid" hidden>
+    <section class="cart-products" aria-labelledby="cart-list-heading">
+      <h2 id="cart-list-heading">Список покупок</h2>
+      <p class="cook-help">Отмечайте продукты, которые уже купили.</p>
+      <ul class="shopping-list" id="shopping-rows"></ul>
+    </section>
+    <aside class="cart-summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Осталось купить</h2>
+      <p id="cart-total" class="cart-total"></p>
+      <p id="cart-progress" class="cart-progress"></p>
+      <p class="estimate-note">Расчёт на нужное количество. В магазине целая упаковка может стоить дороже.</p>
+      <h3>Для каких блюд</h3>
+      <ul id="cart-recipes" class="cart-recipe-links"></ul>
+    </aside>
+  </div>
+  <div class="cook-undo" id="cart-undo" hidden><span id="undo-message" role="status"></span><button class="cook-text-link" id="undo-remove" type="button">Вернуть</button></div>
+</main>

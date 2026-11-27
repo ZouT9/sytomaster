@@ -1,0 +1,85 @@
+@font-face{font-family:"Gotham Pro";src:url("../fonts/gothampro.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Gotham Pro";src:url("../fonts/gothampro_medium.ttf") format("truetype");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Gotham Pro";src:url("../fonts/gothampro_bold.ttf") format("truetype");font-weight:700 900;font-display:swap}
+@font-face{font-family:"Donpoligrafbum";src:url("../fonts/Donpoligrafbum-Bold.otf") format("opentype");font-weight:700;font-display:swap}
+*{box-sizing:border-box}
+html{color-scheme:light;scroll-behavior:smooth;scroll-padding-top:var(--s5)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--text)/1.48 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+button:disabled{cursor:default}
+img{display:block;max-width:100%}
+button,select,a,summary,input{touch-action:manipulation}
+button{border:0}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{overflow-wrap:break-word}
+[hidden],template{display:none!important}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+::selection{background:var(--cream);color:var(--strong)}
+.shell{width:min(calc(100% - 2 * var(--gutter)),var(--wide));margin-inline:auto}
+.sr-only,.visually-hidden{position:absolute;width:1px;height:1px;padding:0;clip-path:inset(50%);white-space:nowrap;overflow:hidden}
+.skip-link{position:fixed;top:var(--s3);left:var(--s3);z-index:20;transform:translateY(-180%);padding:var(--s3) var(--s5);background:var(--surface);border-radius:var(--r-sm)}
+.skip-link:focus{transform:none}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);min-height:96px;border-bottom:1px solid var(--line)}
+.brand{display:inline-flex;align-items:center;min-height:var(--touch)}
+.brand img{width:clamp(124px,11vw,172px);height:auto}
+.site-nav{display:flex;align-items:center;gap:var(--s6)}
+.site-nav a{display:inline-flex;align-items:center;min-height:var(--touch);padding-inline:var(--s3);gap:var(--s2);border-radius:var(--r-sm);font-weight:500;transition:background-color var(--motion-fast),transform var(--motion-fast) var(--ease-out)}
+.icon-sprite{position:absolute;pointer-events:none}
+.icon{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.site-nav [aria-current=page]{background:var(--cream);color:var(--strong)}
+.site-footer{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);margin-top:var(--s9);padding-block:var(--s5);border-top:1px solid var(--line);font-size:var(--small)}
+.site-footer .brand img{width:108px}
+.text-link{display:inline-flex;align-items:center;gap:var(--s2);min-height:var(--touch);font-weight:500}
+.text-link .icon{transition:transform var(--motion-fast) var(--ease-out)}
+.plain-button,.outline-button{border:0;border-radius:var(--r-sm);display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:var(--touch);padding:var(--s2) var(--s4);background:var(--cream);color:var(--strong);font-weight:500}
+.round-button{display:inline-grid;place-items:center;width:var(--touch);height:var(--touch);border:0;border-radius:var(--r-circle);background:var(--surface);color:var(--ink)}
+.round-button:disabled{background:transparent;color:var(--muted)}
+.round-button svg,.plain-button svg{width:20px;height:20px}
+.recipe-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--s6);row-gap:var(--s7)}
+.dish-card{position:relative;display:flex;flex-flow:column;isolation:isolate;border-radius:var(--r-md);min-width:0;color:var(--strong)}
+.dish-card::before{position:absolute;content:"";inset:22% 0 0;z-index:-1;border-radius:var(--r-md);background:var(--surface)}
+.dish-photo{position:relative;width:calc(100% + var(--s4));margin-inline:calc(-1 * var(--s2));aspect-ratio:1.04}
+.dish-photo img{position:absolute;inset:0;width:100%;height:100%;min-width:0;min-height:0;object-fit:contain;transition:transform var(--time) ease-out}
+.dish-copy{display:flex;flex-direction:column;justify-content:flex-start;flex:1;padding:var(--s2) var(--s4) var(--s5);gap:var(--s2)}
+.dish-name{font:600 var(--lead)/1.18 var(--body);overflow-wrap:anywhere}
+.dish-meta{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s1) var(--s4);font-size:var(--small);color:var(--muted);font-variant-numeric:tabular-nums}
+.dish-meta>span{display:inline-flex;align-items:center;gap:var(--s1)}
+.dish-meta svg{width:15px;height:15px}
+.dish-reason{font-size:var(--small);color:var(--ink);margin-top:var(--s1)}
+.serving-note{font:400 var(--small)/1.4 var(--body);color:var(--muted)}
+.recipe-grid .dish-meta{margin-top:auto}
+@media(hover:hover) {
+ .site-nav a:hover{background:var(--cream);transform:translateY(-2px)}
+ .text-link:hover .icon{transform:translateY(-3px)}
+ .round-button:not(:disabled):hover,.plain-button:hover{background:var(--line)}
+}
+@media (max-width:1399px) {
+  .site-header { min-height:88px; }
+}
+@media (max-width:1159px) {
+  .recipe-grid { grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:var(--s5); }
+  .recipe-grid .dish-name { font-size:clamp(1rem,1.8vw,1.25rem); }
+}
+@media (max-width:900px) {
+  .site-header { min-height:80px; }
+  .site-nav { gap:var(--s4); }
+}
+@media (max-width:719px) {
+  .recipe-grid { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:var(--s4); row-gap:var(--s6); }
+  .dish-copy { padding:var(--s2) var(--s3) var(--s4); }
+}
+@media (max-width:640px) {
+  .site-header { min-height:72px; gap:var(--s2); }
+  .site-nav { min-width:0; gap:var(--s1); flex-wrap:wrap; justify-content:flex-end; font-size:var(--small); }
+  .site-nav a { gap:var(--s1); padding-inline:var(--s2); }
+  .site-nav svg { width:18px; height:18px; }
+  .recipe-grid .dish-meta { display:grid; }
+  .site-footer { margin-top:var(--s7); }
+}
+@media (max-width:355px) {
+  .site-nav svg { display:none; }
+  .site-header .brand img { width:104px; }
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}

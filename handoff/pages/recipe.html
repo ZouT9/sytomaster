@@ -1,0 +1,50 @@
+<main id="main-content" class="shell cook-page" data-cooking-page="recipe">
+  <nav class="cook-back" aria-label="Навигация по рецептам"><a href="index.html#catalog"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg> К рецептам</a></nav>
+  <div id="recipe-missing" hidden>
+    <h1>Рецепт не найден</h1><p>Вернитесь в каталог и выберите другое блюдо.</p>
+    <a class="cook-action" href="index.html#catalog">Все рецепты</a>
+  </div>
+  <article id="recipe-view" hidden>
+    <header class="dish-hero">
+      <div class="dish-intro">
+        <h1 class="dish-heading" id="dish-name"></h1>
+        <p class="dish-description" id="dish-description"></p>
+        <dl class="dish-facts">
+          <div><dt>Время готовки</dt><dd id="dish-time"></dd></div>
+          <div><dt>За порцию</dt><dd id="dish-price"></dd></div>
+        </dl>
+        <a class="cook-action" href="#steps-title">Готовим! <svg class="icon cook-action-down" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
+      </div>
+      <figure class="dish-figure"><img id="dish-photo" alt=""><figcaption id="dish-caption" hidden></figcaption></figure>
+    </header>
+    <div class="dish-method">
+      <section class="ingredients-panel" aria-labelledby="ingredient-title">
+        <h2 id="ingredient-title">Ингредиенты</h2>
+        <div class="portions-control">
+          <label id="dish-portions-label" for="dish-portions">Порции</label>
+          <div class="select-menu select-menu--compact">
+            <select id="dish-portions"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select>
+          </div>
+        </div>
+        <fieldset class="cook-fieldset">
+          <legend>Отметьте, что уже есть дома</legend>
+          <ul class="kitchen-list" id="ingredient-rows"></ul>
+        </fieldset>
+        <button class="cook-secondary" id="add-missing" type="button">Добавить недостающее</button>
+        <a class="cook-text-link" id="see-cart" href="cart.html" hidden>Открыть корзину <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        <p class="cook-feedback" id="basket-feedback" role="status"></p>
+      </section>
+      <section class="method-column" id="cooking-steps" aria-labelledby="steps-title">
+        <h2 id="steps-title" tabindex="-1">Пошаговая готовка</h2>
+        <ol class="method-list" id="method-rows"></ol>
+        <details class="recipe-origin"><summary>О рецепте и расчётах <svg class="icon details-arrow" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+          <p id="recipe-credit"></p><p>Цена рассчитана по количеству ингредиентов для одной порции. Время приблизительное.</p>
+        </details>
+      </section>
+    </div>
+    <section id="related-recipes" class="dish-related" aria-labelledby="related-title" hidden>
+      <h2 id="related-title">Ещё из тех же продуктов</h2>
+      <div id="related-rows" class="related-row"></div>
+    </section>
+  </article>
+</main>
